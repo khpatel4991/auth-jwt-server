@@ -1,0 +1,7 @@
+3 cases:
+
+Signup ==> Signup Logic ==> Token
+
+SignIn ==> Verify email, pass ==> Token
+
+Protected Resource ==> Verify Token ==> Resource
