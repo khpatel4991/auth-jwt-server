@@ -6,6 +6,11 @@ exports.signup = function(req, res, next) {
     const password = req.body.password;
     console.log(req.body);
 
+    if (!email || !password) {
+        //Check email and password validations here
+        return res.status(422).send({ error: 'Please enter email and password' });
+    }
+
     //See if a user with given email exists
     User.findOne({ email: email }, function(err, existingUser) {
         if (err) { return next(err); }
