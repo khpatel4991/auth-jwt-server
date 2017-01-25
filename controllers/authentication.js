@@ -1,4 +1,16 @@
+const jwt = require('jwt-simple');
 const User = require('../models/user');
+const config = require('../config');
+
+
+function tokenForUser(user) {
+    //JWT needs to have these two props
+    // Always: JWT has sub(subject) prop
+    // Always: iat: Issued at Time prop
+
+    const timestamp = new Date().getTime();
+    return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+}
 
 exports.signup = function(req, res, next) {
 
@@ -32,7 +44,7 @@ exports.signup = function(req, res, next) {
     user.save(function(err) {
         if (err) { return next(err); }
 
-        res.json({ success: true });
+        res.json({ token: tokenForUser(user) });
 
     });
 
