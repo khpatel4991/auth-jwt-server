@@ -6,6 +6,8 @@ const app = express();
 
 //App Setup
 //Express Middleware
+app.use(morgan('combined')); //Morgan is logging framework on server
+app.use(bodyParser.json({ type: '*/*' })) //Parse any incoming request as json
 
 
 //Server Setup

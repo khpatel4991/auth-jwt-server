@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Server for next project",
   "main": "index.js",
+  "scripts": {
+    "dev": ""
+  },
   "repository": "https://github.com/khpatel4991/auth-jwt-server.git",
   "author": "Kashyap Patel",
   "license": "MIT",
@@ -10,6 +13,7 @@
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "mongoose": "^4.7.8",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0"
   }
 }
