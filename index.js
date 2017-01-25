@@ -3,11 +3,13 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
+const router = require('./router');
 
 //App Setup
 //Express Middleware
 app.use(morgan('combined')); //Morgan is logging framework on server
 app.use(bodyParser.json({ type: '*/*' })) //Parse any incoming request as json
+router(app);
 
 
 //Server Setup
