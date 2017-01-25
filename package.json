@@ -4,7 +4,7 @@
   "description": "Server for next project",
   "main": "index.js",
   "scripts": {
-    "dev": ""
+    "dev": "nodemon index.js"
   },
   "repository": "https://github.com/khpatel4991/auth-jwt-server.git",
   "author": "Kashyap Patel",
